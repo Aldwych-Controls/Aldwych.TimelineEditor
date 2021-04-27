@@ -1,77 +1,19 @@
-# 🎞️ Aldwych.TimelineEditor
-An [Avalonia UI](http://avaloniaui.net/) multitrack timeline editor control, inspired by [Logic Pro X](https://www.apple.com/uk/logic-pro/).
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Sample.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:te="clr-namespace:Aldwych.TimelineEditor;assembly=Aldwych.TimelineEditor"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Sample.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Sample">
 
-![screenshot of sample app](assets/sample_app_screenshot.png)
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
 
-## Important Note
-This is a **work in progress** and is not anywhere close to finished. Consider it a **experimental** sample rather than a ready to use control. 
-
-I've lots of work to do before I commit to an API and thus things are a little disjointed at the moment. As it stands, this is the result of just a single afternoon of hacking.
-
-I will continue to work on this as and when I find time as I need this control for an app, but I have no timeline (pun unintended) for when this might be. 
-
-# Example usage to use 
-
-## Models
-
-**TrackItem**
-```csharp
-var clip1 = new TrackItem() 
-{ 
-    Title = "Test 1", 
-    Start = TimeSpan.FromSeconds(10), 
-    End = TimeSpan.FromSeconds(20), 
-    IsSelected = true 
-};
-```
-
-**ViewModel**
-```csharp
-public ObservableCollection<TrackItem> Clips { get; private set; }
-
-public MyViewModel()
-{
-    Clips = new ObservableCollection<TrackItem>();
-
-    //Create clip(s)
-
-    Clips.Add(clip1);
-}
-```
-
-
-
-Almost all the controls are lookless and thus require some styling in order to render. 
-
-### Styles
-```xml
-<Window.Styles>
-
-<!-- Track Item (clip) Container -->
-<Style Selector="te|TimelinePanel">
-      <Setter Property="VerticalAlignment" Value="Top"/>
-      <Setter Property="SelectionMode" Value="Multiple"/>
-      <Setter Property="Template">
-        <ControlTemplate>
-          <Border Name="border" BorderBrush="{TemplateBinding BorderBrush}"
-                  BorderThickness="{TemplateBinding BorderThickness}">
-            <ScrollViewer Name="PART_ScrollViewer"
-                          Background="{TemplateBinding Background}"
-                          HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
-                          VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
-              <ItemsPresenter Name="PART_ItemsPresenter"
-                              Items="{TemplateBinding Items}"
-                              ItemsPanel="{TemplateBinding ItemsPanel}"
-                              ItemTemplate="{TemplateBinding ItemTemplate}"
-                              Margin="{TemplateBinding Padding}"
-                              VirtualizationMode="{TemplateBinding VirtualizationMode}"/>
-            </ScrollViewer>
-          </Border>
-        </ControlTemplate>
-      </Setter>
-    </Style>
-
-    <!-- Track Row -->
+  <Window.Styles>
     <Style Selector="te|Track">
       <Setter Property="VerticalAlignment" Value="Top"/>
       <Setter Property="SelectionMode" Value="Multiple"/>
@@ -95,7 +37,30 @@ Almost all the controls are lookless and thus require some styling in order to r
       </Setter>
     </Style>
 
-    <!-- Track Item / Clip style -->
+    <Style Selector="te|TimelinePanel">
+      <Setter Property="VerticalAlignment" Value="Top"/>
+      <Setter Property="SelectionMode" Value="Multiple"/>
+      <Setter Property="Template">
+        <ControlTemplate>
+          <Border Name="border" BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}">
+            <ScrollViewer Name="PART_ScrollViewer"
+                          Background="{TemplateBinding Background}"
+                          HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+                          VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
+              <ItemsPresenter Name="PART_ItemsPresenter"
+                              Items="{TemplateBinding Items}"
+                              ItemsPanel="{TemplateBinding ItemsPanel}"
+                              ItemTemplate="{TemplateBinding ItemTemplate}"
+                              Margin="{TemplateBinding Padding}"
+                              VirtualizationMode="{TemplateBinding VirtualizationMode}"/>
+            </ScrollViewer>
+          </Border>
+        </ControlTemplate>
+      </Setter>
+    </Style>
+
+
     <Style Selector="te|TrackItem">
       <Setter Property="Background" Value="#428418"/>
       <Setter Property="MinWidth" Value="20"/>
@@ -132,22 +97,17 @@ Almost all the controls are lookless and thus require some styling in order to r
       </Setter>
     </Style>
 
-    <!-- Track Item default border -->
     <Style Selector="te|TrackItem /template/ Border#PART_Border">
       <Setter Property="BorderBrush" Value="Black" />
     </Style>
 
-    <!-- Track Item selected border -->
     <Style Selector="te|TrackItem:selected /template/ Border#PART_Border">
       <Setter Property="BorderBrush" Value="Blue" />
     </Style>
     
   </Window.Styles>
-```
 
-### Create a TimelineView
-
-```xml
+  <Grid RowDefinitions="*, Auto" Background="#212121">
     <ScrollViewer HorizontalScrollBarVisibility="Visible" Background="Transparent" AllowAutoHide="False" >
       <Grid RowDefinitions="Auto, *">
 
@@ -194,20 +154,19 @@ Almost all the controls are lookless and thus require some styling in order to r
       </Panel>
       </Grid>
     </ScrollViewer>
-```
----
 
-## Problems or Suggestions
-[Open an issue here](../..//issues)
+    <Border Grid.Row="1" Height="50" Background="#323232">
 
-## Contributors
-|        ![Photo](https://avatars.githubusercontent.com/u/552074?s=160&v=4)|  
-|:----------------------------------------------:|
-|                 **Mike James** - Author                
-|  [GitHub](https://github.com/MikeCodesDotNet)  | 
-| [Twitter](https://twitter.com/MikeCodesDotNet) | 
+      <StackPanel Orientation="Horizontal" Spacing="50">
+        <Slider Minimum="0.0" Maximum="2.0" TickFrequency="0.1" Value="{Binding ZoomLevel}" Width="250"/>
         
----
-## License
-Licensed under MIT see License file.
+        <Button HorizontalAlignment="Right" Command="{Binding AddNewItem}" Content="Add New Item"/>
+        <Button HorizontalAlignment="Right" Command="{Binding Add10Seconds}" Content="Add 10s"/>
+        <Button HorizontalAlignment="Right" Command="{Binding Remove10Seconds}" Content="Remove 10s"/>
 
+      </StackPanel>
+      
+    </Border>
+  </Grid>
+
+</Window>
