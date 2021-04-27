@@ -1,7 +1,31 @@
-# 🎞️ Aldwych.TimelineEditor
-An [Avalonia UI](http://avaloniaui.net/) multitrack timeline editor control, inspired by [Logic Pro X](https://www.apple.com/uk/logic-pro/).
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
 
-![screenshot of sample app](assets/sample_app_screenshot.png)
+
+<br />
+<p align="center">
+
+  <h3 align="center">🎞️ Aldwych.TimelineEditor</h3>
+
+  <p align="center">
+    A multitrack timeline control, inspired by Logic Pro X.
+    <br />    
+    <a href="https://aldwych-controls.gitbook.io/ui-controls/"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/Aldwych-Controls/Aldwych.TimelineEditor/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/Aldwych-Controls/Aldwych.TimelineEditor/issues">Request Feature</a>
+  </p>
+</p>
+
+
+
+
+
 
 ## Important Note
 This is a **work in progress** and is not anywhere close to finished. Consider it a **experimental** sample rather than a ready to use control. 
@@ -210,4 +234,26 @@ Almost all the controls are lookless and thus require some styling in order to r
 ---
 ## License
 Licensed under MIT see License file.
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/Aldwych-Controls/Aldwych.TimelineEditor?style=for-the-badge
+[contributors-url]: https://github.com/Aldwych-Controls/Aldwych.TimelineEditor/graphs/contributors
+
+[forks-shield]: https://img.shields.io/github/forks/Aldwych-Controls/Aldwych.TimelineEditor?style=for-the-badge
+[forks-url]: https://github.com/Aldwych-Controls/Aldwych.TimelineEditor/network/members
+
+[stars-shield]: https://img.shields.io/github/stars/Aldwych-Controls/Aldwych.TimelineEditor?style=for-the-badge
+[stars-url]: https://github.com/Aldwych-Controls/Aldwych.TimelineEditor/stargazers
+
+[issues-shield]: https://img.shields.io/github/issues/Aldwych-Controls/Aldwych.TimelineEditor?style=for-the-badge
+[issues-url]: https://github.com/Aldwych-Controls/Aldwych.TimelineEditor/issues
+
+[license-shield]: https://img.shields.io/github/license/Aldwych-Controls/Aldwych.TimelineEditor?style=for-the-badge
+[license-url]: https://github.com/Aldwych-Controls/Aldwych.TimelineEditor/blob/master/LICENSE.txt
+
+[sample-app-screenshot]: assets/sample_app_screenshot.png
+
 
