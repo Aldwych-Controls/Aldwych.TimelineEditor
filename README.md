@@ -22,21 +22,58 @@
   </p>
 </p>
 
+--- 
+
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#models">Models</a></li>
+        <li><a href="#styles">Styles</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+  </ol>
+</details>
 
 
 
+## About
 
+[![Sample Screen Shot][sample-app-screenshot]]()
 
-## Important Note
 This is a **work in progress** and is not anywhere close to finished. Consider it a **experimental** sample rather than a ready to use control. 
 
 I've lots of work to do before I commit to an API and thus things are a little disjointed at the moment. As it stands, this is the result of just a single afternoon of hacking.
 
 I will continue to work on this as and when I find time as I need this control for an app, but I have no timeline (pun unintended) for when this might be. 
 
-# Example usage to use 
 
-## Models
+### Built With
+This control wouldn't have been possible without the following: 
+* [Avalonia UI](http://avaloniaui.net/)
+* [.NET Core](https://dotnet.microsoft.com/)
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+### Models
 
 **TrackItem**
 ```csharp
@@ -169,7 +206,11 @@ Almost all the controls are lookless and thus require some styling in order to r
   </Window.Styles>
 ```
 
-### Create a TimelineView
+<!-- USAGE EXAMPLES -->
+## Usage
+
+_For more examples, please refer to the [Documentation](https://aldwych-controls.gitbook.io/ui-controls/)_
+
 
 ```xml
     <ScrollViewer HorizontalScrollBarVisibility="Visible" Background="Transparent" AllowAutoHide="False" >
@@ -221,20 +262,38 @@ Almost all the controls are lookless and thus require some styling in order to r
 ```
 ---
 
-## Problems or Suggestions
-[Open an issue here](../..//issues)
+<!-- ROADMAP -->
+## Roadmap
 
-## Contributors
-|        ![Photo](https://avatars.githubusercontent.com/u/552074?s=160&v=4)|  
-|:----------------------------------------------:|
-|                 **Mike James** - Author                
-|  [GitHub](https://github.com/MikeCodesDotNet)  | 
-| [Twitter](https://twitter.com/MikeCodesDotNet) | 
-        
----
+See the [open issues](https://github.com/Aldwych-Controls/Aldwych.TimelineEditor/issues) for a list of proposed features (and known issues).
+
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+
+<!-- LICENSE -->
 ## License
-Licensed under MIT see License file.
 
+Distributed under the MIT License. See `LICENSE` for more information.
+
+
+<!-- CONTACT -->
+## Contact
+
+Mike James - [@MikeCodesDotNET](https://twitter.com/MikeCodesDotNet)
+
+Project Link: [https://github.com/Aldwych-Controls/](https://github.com/Aldwych-Controls/)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
